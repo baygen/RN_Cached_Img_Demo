@@ -9,9 +9,10 @@ export const USER = mirror({
 export const FEED = mirror({
   SET_POSTS: null,
   APPLY_FILTER: null,
-  ADD_POSTS: null
+  ADD_POSTS: null,
+  SET_DISPLAYED_POSTS: null
 });
 
 export const FILTER = mirror({
-  SET_FILTER_TYPE: null
+  SET_FILTER_VALUE: null
 })

@@ -5,11 +5,17 @@ export const addPosts = (list) => ({
   payload: list
 });
 
-export const setFilterType = type => ({
-  type: FEED.SET_FILTER_TYPE,
-  payload: type
+export const setPosts = (list) => ({
+  type: FEED.SET_POSTS,
+  payload: list
 });
 
-export const applyFilter = () => ({
-  type: FEED.APPLY_FILTER
+export const setDisplayedPosts = (list) => ({
+  type: FEED.SET_DISPLAYED_POSTS,
+  payload: list
+});
+
+export const applyFilter = filterType => ({
+  type: FEED.APPLY_FILTER,
+  filterType
 });

@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, Picker } from 'react-native';
 import { connect } from 'react-redux';
 import Styles from '../../common/Styles';
-import { setFilter, setAndApplyFilter } from './logic';
 
-@connect(state => ({
-  filter: state.feed.filterType
-}), { setFilter, setAndApplyFilter })
+// @connect(state => ({
+//   filter: state.feed.filterType
+// }), { setFilter, setAndApplyFilter })
 export default class Menu extends Component {
   state = {
 

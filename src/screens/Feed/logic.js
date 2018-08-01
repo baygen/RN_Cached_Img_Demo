@@ -1,9 +1,10 @@
-import { addPosts, applyFilter } from './../../redux/actions/feed';
-import { getData } from './../../modules/dataReader';
+import { addPosts, applyFilter, setPosts } from '../../redux/actions/feed';
+import { getData } from '../../modules/dataReader';
 
-export const getPosts = () => async dispatch => {
+export const getPosts = () => async (dispatch, getState) => {
 
-  await dispatch(addPosts((await getData())));
-  await dispatch(applyFilter());
+  await dispatch(setPosts((await getData())));
+
+  dispatch(applyFilter((await getState()).filter.value));
 };
 

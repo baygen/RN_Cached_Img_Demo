@@ -13,21 +13,21 @@ export default (state = feed, action) => {
       ...state,
       allPosts: action.payload
     };
+  case FEED.SET_DISPLAYED_POSTS:
+    return {
+      ...state,
+      displayedPosts: action.payload
+    };
   case FEED.ADD_POSTS:
     return {
       ...state,
       allPosts: [...state.allPosts, ...action.payload]
     };
-  case FEED.SET_FILTER_TYPE:
-    return {
-      ...state,
-      filterType: action.payload
-    };
   case FEED.APPLY_FILTER:
     return {
       ...state,
-      displayedPosts: state.filterType
-        ? state.allPosts.filter(p => p.type === state.filterType)
+      displayedPosts: action.filterType
+        ? state.allPosts.filter(p => p.type === action.filterType)
         : state.allPosts
     };
   default:

@@ -5,8 +5,8 @@ import {
 } from 'react-navigation';
 
 import LoadingScreen from '../screens/AppLoading';
-import Feed from '../screens/Feed';
-import Login from '../screens/Login';
+import Feed from '../screens/Feed/View';
+import Login from '../screens/Login/View';
 
 import Menu from '../screens/Menu';
 

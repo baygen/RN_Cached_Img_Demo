@@ -1,7 +1,7 @@
 import { FILTER } from '../constants';
 
 const filter = {
-  value: 'All'
+  value: ''
 };
 
 export default (state = filter, action) => {
