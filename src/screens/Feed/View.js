@@ -3,10 +3,11 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import Styles from '../../common/Styles';
 import TypesFilter from '../../common/TabFilter/TypesFilter';
+import PostsFeed from '../../common/PostsFeed/View';
 import { getPosts } from './logic';
 
 @connect(state => ({
-  posts: state.feed.displayedPosts,
+  // posts: state.feed.displayedPosts,
   // store: state
 }),
   {
@@ -32,17 +33,18 @@ export default class Feed extends Component {
   render() {
     return (
       <View style={Styles.centeredContainerColumn} >
+        <TypesFilter style={{ flex: 1 }} />
         <TouchableOpacity
           onPress={this.goApploading}
           style={{ flex: 1, justifyContent: 'center' }}
         >
-          <Text>DataProtection page:</Text>
-          <Text>{this.props.posts.length}</Text>
+          <Text>P O S T S</Text>
+          {/* <Text>{this.props.posts.length}</Text> */}
         </TouchableOpacity>
-        <TypesFilter style={{ flex: 1 }} />
-        <View style={{ flex: 5, backgroundColor: '#7BA3E7', width: '100%' }}>
 
-        </View>
+        {/* <View style={{ flex: 6, backgroundColor: '#7BA3E7', width: '100%' }}> */}
+        <PostsFeed style={{ flex: 8 }} />
+        {/* </View> */}
       </View>
     );
   }
