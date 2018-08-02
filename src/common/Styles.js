@@ -14,6 +14,11 @@ export default StyleSheet.create({
     alignItems: 'center',
     flex: 1
   },
+  avatarIcon: {
+    width: 80,
+    height: 80,
+    borderRadius: 40
+  },
   centeredContainerRow: {
     flex: 1,
     flexDirection: 'row',
