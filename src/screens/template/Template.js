@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 import Styles from '../../common/Styles';
-import Lang from '../../Languages';
 
 @connect(state => ({}))
 export default class TemplatePage extends Component {
+  static propTypes = {
+
+  }
+
   state = {
 
   }
