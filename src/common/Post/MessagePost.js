@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { AvatarIcon, BottomPart, UserName } from './components';
+import { AvatarIcon, BottomPart, UserName } from '../statelessComponents';
 import Styles from '../Styles';
 
 export default class MessagePost extends PureComponent {

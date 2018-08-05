@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { BottomPart, UserName, LargeImage } from './components';
+import { BottomPart, UserName, LargeImage } from '../statelessComponents';
 import Styles from '../Styles';
 
 
