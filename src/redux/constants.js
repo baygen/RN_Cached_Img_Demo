@@ -16,3 +16,7 @@ export const FEED = mirror({
 export const FILTER = mirror({
   SET_FILTER_VALUE: null
 });
+
+export const LOGIN = mirror({
+  ON_FIELD_CHANGE: null
+})
