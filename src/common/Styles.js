@@ -14,6 +14,11 @@ export default StyleSheet.create({
     alignItems: 'center',
     flex: 1
   },
+  postImage: {
+    width: WIDTH,
+    height: WIDTH,
+    backgroundColor: COLORS.TRANSPARENTS.green
+  },
   avatarIcon: {
     width: 80,
     height: 80,
@@ -54,3 +59,11 @@ export default StyleSheet.create({
     fontSize: 14
   }
 });
+
+const COLORS = {
+  white: '#fff',
+  black: '#000',
+  TRANSPARENTS: {
+    green: '#27ff007a'
+  }
+}
