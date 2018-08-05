@@ -44,7 +44,10 @@ export const BottomPart = ({ commentsCount = 0, likesCount = null }) => (
 
 export const UserName = ({
   name = 'Unkhown User',
-  styles = {}
+  styles = {
+    textStyle : {},
+    container : {}
+  }
 }) => (
     <View style={[{
       flexDirection: 'row',// paddingHorizontal: 5,

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { BottomPart, UserName, LargeImage } from './components';
+import Styles from '../Styles';
 
 
 export default class ImagePost extends PureComponent {
@@ -17,17 +18,14 @@ export default class ImagePost extends PureComponent {
   render() {
 
     return (
-      <View style={{
-        flex: 1,
-        width: '100%',
-        flexDirection: 'column',
-        borderBottomColor: 'gray',
-        borderBottomWidth: 1,
-      }}>
+      <View style={Styles.imagePostConatiner} >
         <UserName name={this.props.userName}
           styles={{
             container: {
-              justifyContent: 'center'
+              justifyContent: 'center',
+            },
+            textStyle: {
+              fontSize: 28
             }
           }} />
         <LargeImage
@@ -35,8 +33,7 @@ export default class ImagePost extends PureComponent {
 
         <BottomPart
           likesCount={this.props.likesCount}
-          commentsCount={this.props.commentsCount}
-        />
+          commentsCount={this.props.commentsCount} />
       </View>
     );
   }

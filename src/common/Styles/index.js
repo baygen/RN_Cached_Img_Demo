@@ -15,6 +15,22 @@ export default StyleSheet.create({
     alignItems: 'center',
     flex: 1
   },
+  messagePostContainer: {
+    flex: 1,
+    width: WIDTH,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    borderBottomColor: 'gray',
+    borderBottomWidth: 1,
+    paddingHorizontal: 10
+  },
+  imagePostContainer: {
+    flex: 1,
+    width: '100%',
+    flexDirection: 'column',
+    borderBottomColor: 'gray',
+    borderBottomWidth: 1
+  },
   postImage: {
     width: WIDTH,
     height: WIDTH,

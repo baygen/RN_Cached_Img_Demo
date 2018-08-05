@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { AvatarIcon, BottomPart, UserName } from './components';
 import Styles from '../Styles';
 
-// @connect(state => ({}))
 export default class MessagePost extends PureComponent {
   static propTypes = {
     userName: PropTypes.string.isRequired,
@@ -17,16 +16,7 @@ export default class MessagePost extends PureComponent {
 
   render() {
     return (
-      // <View style={{ width: '100%', flexDirection: 'column' }}>
-      <View style={{
-        flex: 1,
-        width: '100%',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        borderBottomColor: 'gray',
-        borderBottomWidth: 1,
-        paddingHorizontal: 10,
-      }}>
+      <View style={Styles.messagePostContainer}>
         <AvatarIcon url={this.props.imageURL} />
         <View style={{ flexDirection: 'column', flex: 1 }}>
           <UserName name={this.props.userName}
@@ -39,9 +29,7 @@ export default class MessagePost extends PureComponent {
 
         </View>
         <BottomPart commentsCount={this.props.commentsCount} />
-      </View>
-
-      // </View >
+      </View >
     );
   }
 }
