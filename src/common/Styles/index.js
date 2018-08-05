@@ -1,9 +1,10 @@
 import { StyleSheet, Dimensions } from 'react-native';
-const { width, height } = Dimensions.get('window');
+const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
+import COLORS from './colors';
 
 export const phoneSize = {
-  HEIGHT: height,
-  WIDTH: width
+  height: HEIGHT,
+  width: WIDTH
 };
 
 export default StyleSheet.create({
@@ -17,7 +18,12 @@ export default StyleSheet.create({
   postImage: {
     width: WIDTH,
     height: WIDTH,
-    backgroundColor: COLORS.TRANSPARENTS.green
+  },
+  bottomRow: {
+    width: '100%',
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingHorizontal: 10, height: 35
   },
   avatarIcon: {
     width: 80,
@@ -44,7 +50,7 @@ export default StyleSheet.create({
     backgroundColor: 'gray'
   },
   rowWidthContainer: {
-    width: width,
+    width: WIDTH,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',// 'space-between'
@@ -54,16 +60,8 @@ export default StyleSheet.create({
     paddingRight: '5%'
   },
   input: {
-    width: 0.9 * width,
+    width: 0.9 * WIDTH,
     lineHeight: 16,
     fontSize: 14
   }
 });
-
-const COLORS = {
-  white: '#fff',
-  black: '#000',
-  TRANSPARENTS: {
-    green: '#27ff007a'
-  }
-}
