@@ -7,18 +7,22 @@ import Styles from '../Styles';
 const SRC_AVATAR_DEFAULT = require('../../../assets/avatar.png');
 const SRC_IMAGE_DEFAULT = require('../../../assets/placeholderImage.png');
 
-export const AvatarIcon = ({ url, style = {} }) => (
-  <FastImage
-    source={{
-      uri: url,
-      priority: FastImage.priority.normal,
-    }}
-    defaultSource={SRC_AVATAR_DEFAULT}
-    style={[ Styles.avatarIcon, style]} />
-);
+export const AvatarIcon = ({ url, style = {} }) => {
+  let isNotLoaded = true;
+  return (
+    <FastImage
+      source={{
+        uri: url,
+        priority: FastImage.priority.normal,
+      }}
+      onLoadEnd={() => isNotLoaded = true}
+      defaultSource={SRC_AVATAR_DEFAULT}
+      style={[Styles.avatarIcon, style, isNotLoaded && { backgroundColor: 'green' }]} />
+  )
+};
 
 export const LargeImage = ({ url, style = {}, ...rest }) => {
-  let isLoaded = false;
+  let isNotLoaded = true;
   return (
     <FastImage
       source={{
@@ -26,28 +30,33 @@ export const LargeImage = ({ url, style = {}, ...rest }) => {
         priority: FastImage.priority.high,
       }}
       {...rest}
-      onLoadEnd={() => isLoaded = true}
+      onLoadEnd={() => isNotLoaded = true}
       resizeMode={FastImage.resizeMode.cover}
       fadeDuration={100}
       defaultSource={SRC_IMAGE_DEFAULT}
-      style={[Styles.postImage, style, !isLoaded && { backgroundColor: 'red' }]} />)
+      style={[Styles.postImage, style, isNotLoaded && { backgroundColor: 'red' }]} />)
 };
 
 export const BottomPart = ({ commentsCount = 0, likesCount = null }) => (
   <View
-    style={[Styles.bottomRow,
-    { justifyContent: likesCount ? 'space-between' : 'center' }]} >
-    <Text style={{ display: !!likesCount ? 'flex' : 'none' }}>{likesCount} likes</Text>
-    <Text > {commentsCount} comments</Text>
-    <Text style={{ display: !!likesCount ? 'flex' : 'none' }}>{moment().format('DD MMM HH:mm')}</Text>
+    style={Styles.bottomRow} >
+    <View style={[Styles.bottomLeftPart, { display: !!likesCount ? 'flex' : 'none' }]}>
+      <Text >{likesCount} likes</Text>
+    </View>
+    <View style={Styles.bottomCenterPart}>
+      <Text > {commentsCount} comments</Text>
+    </View>
+    <View style={[Styles.bottomRightPart, { display: !!likesCount ? 'flex' : 'none' }]}>
+      <Text style={{ display: !!likesCount ? 'flex' : 'none' }}>{moment().format('DD MMM HH:mm')}</Text>
+    </View>
   </View>
 )
 
 export const UserName = ({
   name = 'Unkhown User',
   styles = {
-    textStyle : {},
-    container : {}
+    textStyle: {},
+    container: {}
   }
 }) => (
     <View style={[Styles.userNameContainer, styles.container || {}]} >

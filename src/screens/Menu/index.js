@@ -12,10 +12,6 @@ export default class Menu extends Component {
 
   }
 
-  go = route => {
-    this.props.navigation.navigate(route);
-  }
-
   onFilterChange = (text) => {
     this.props.navigation.closeDrawer();
   }

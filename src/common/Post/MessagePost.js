@@ -18,7 +18,7 @@ export default class MessagePost extends PureComponent {
     return (
       <View style={Styles.messagePostContainer}>
         <AvatarIcon url={this.props.imageURL} />
-        <View style={{ flexDirection: 'column', flex: 1 }}>
+        <View style={{ flexDirection: 'column', flex: 1, padding: 5 }}>
           <UserName name={this.props.userName}
             styles={{
               container: {
