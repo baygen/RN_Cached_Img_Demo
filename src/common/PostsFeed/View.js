@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import MessagePost from '../Post/MessagePost';
 import ImagePost from '../Post/ImagePost';
@@ -11,24 +11,32 @@ export default class PostsFeed extends Component {
 
   }
 
-  renderPost = ({ item }) => {
-    if (item.type === 'messagePost') return <MessagePost {...item} key={item.identifier} />;
-    return (<ImagePost {...item} key={item.identifier} /> );
-  }
+  // renderPost = ({ item }) => {
+  //   if (item.type === 'messagePost') return <MessagePost {...item} key={item.identifier} />;
+  //   return (<ImagePost {...item} key={item.identifier} /> );
+  // }
 
-  genKey = (item, index) => `${item.identifier}`
+  // genKey = (item, index) => `${item.identifier}`
 
   render() {
     return (
 
       <View style={[Styles.fullWidth, this.props.style]}>
-        <FlatList
+        <ScrollView
+          removeClippedSubviews={true}>
+            {this.props.posts.map(item =>{
+              if (item.type === 'messagePost') return <MessagePost {...item} key={item.identifier} />;
+              return (<ImagePost {...item} key={item.identifier} /> );
+            })}
+          </ScrollView>
+
+        {/* <FlatList
           keyExtractor={this.genKey}
           initialNumToRender={2}
           renderToHardwareTextureAndroid={true}
           data={this.props.posts}
           renderItem={this.renderPost}
-        />
+        /> */}
       </View>
     );
   }
