@@ -17,9 +17,9 @@ export default StyleSheet.create({
   },
   messagePostContainer: {
     flex: 1,
-    width: WIDTH,
     flexDirection: 'row',
     flexWrap: 'wrap',
+    width: '100%'
     // paddingHorizontal: 10
   },
   imagePostContainer: {

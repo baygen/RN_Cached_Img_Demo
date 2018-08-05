@@ -18,7 +18,7 @@ export const AvatarIcon = ({ url, style = {} }) => {
       onLoadEnd={() => isNotLoaded = true}
       defaultSource={SRC_AVATAR_DEFAULT}
       style={[Styles.avatarIcon, style, isNotLoaded && { backgroundColor: 'green' }]} />
-  )
+  );
 };
 
 export const LargeImage = ({ url, style = {}, ...rest }) => {
@@ -34,23 +34,23 @@ export const LargeImage = ({ url, style = {}, ...rest }) => {
       resizeMode={FastImage.resizeMode.cover}
       fadeDuration={100}
       defaultSource={SRC_IMAGE_DEFAULT}
-      style={[Styles.postImage, style, isNotLoaded && { backgroundColor: 'red' }]} />)
+      style={[Styles.postImage, style, isNotLoaded && { backgroundColor: 'red' }]} />);
 };
 
 export const BottomPart = ({ commentsCount = 0, likesCount = null }) => (
   <View
     style={Styles.bottomRow} >
-    <View style={[Styles.bottomLeftPart, { display: !!likesCount ? 'flex' : 'none' }]}>
+    <View style={[Styles.bottomLeftPart, { display: likesCount ? 'flex' : 'none' }]}>
       <Text >{likesCount} likes</Text>
     </View>
     <View style={Styles.bottomCenterPart}>
       <Text > {commentsCount} comments</Text>
     </View>
-    <View style={[Styles.bottomRightPart, { display: !!likesCount ? 'flex' : 'none' }]}>
-      <Text style={{ display: !!likesCount ? 'flex' : 'none' }}>{moment().format('DD MMM HH:mm')}</Text>
+    <View style={[Styles.bottomRightPart, { display: likesCount ? 'flex' : 'none' }]}>
+      <Text style={{ display: likesCount ? 'flex' : 'none' }}>{moment().format('DD MMM HH:mm')}</Text>
     </View>
   </View>
-)
+);
 
 export const UserName = ({
   name = 'Unkhown User',
@@ -59,7 +59,7 @@ export const UserName = ({
     container: {}
   }
 }) => (
-    <View style={[Styles.userNameContainer, styles.container || {}]} >
-      <Text style={[{ fontSize: 20, fontWeight: '500' }, styles.textStyle || {}]} >{name}</Text>
-    </View>
-  );
+  <View style={[Styles.userNameContainer, styles.container || {}]} >
+    <Text style={[{ fontSize: 20, fontWeight: '500' }, styles.textStyle || {}]} >{name}</Text>
+  </View>
+);
