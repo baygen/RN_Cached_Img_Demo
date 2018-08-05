@@ -19,4 +19,4 @@ export const FILTER = mirror({
 
 export const LOGIN = mirror({
   ON_FIELD_CHANGE: null
-})
+});

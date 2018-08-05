@@ -17,19 +17,15 @@ export default StyleSheet.create({
   },
   messagePostContainer: {
     flex: 1,
-    width: WIDTH,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    borderBottomColor: 'gray',
-    borderBottomWidth: 1,
-    paddingHorizontal: 10
+    width: '100%'
+    // paddingHorizontal: 10
   },
   imagePostContainer: {
     flex: 1,
     width: '100%',
     flexDirection: 'column',
-    borderBottomColor: 'gray',
-    borderBottomWidth: 1
   },
   postImage: {
     width: WIDTH,
@@ -39,7 +35,27 @@ export default StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     flexDirection: 'row',
-    paddingHorizontal: 10, height: 35
+    paddingHorizontal: 10, height: 35,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 1
+  },
+  bottomLeftPart: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center'
+  },
+  bottomRightPart: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  },
+  bottomCenterPart: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   avatarIcon: {
     width: 80,

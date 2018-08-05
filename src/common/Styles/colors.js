@@ -4,4 +4,4 @@ export default {
   TRANSPARENTS: {
     green: '#27ff007a'
   }
-}
+};

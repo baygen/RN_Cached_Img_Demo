@@ -22,7 +22,7 @@ export const ROUTES = {
   APP_LOADING: 'AppLoading',
   LOGIN: 'Login',
   SETTINGS: 'Settings'
-}
+};
 
 const MainNavigator = createStackNavigator(
   {

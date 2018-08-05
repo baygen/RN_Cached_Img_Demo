@@ -24,11 +24,11 @@ export default class PostsFeed extends Component {
       <View style={[Styles.fullWidth, this.props.style]}>
         <ScrollView
           removeClippedSubviews={true}>
-            {this.props.posts.map(item =>{
-              if (item.type === 'messagePost') return <MessagePost {...item} key={item.identifier} />;
-              return (<ImagePost {...item} key={item.identifier} /> );
-            })}
-          </ScrollView>
+          {this.props.posts.map(item =>{
+            if (item.type === 'messagePost') return <MessagePost {...item} key={item.identifier} />;
+            return (<ImagePost {...item} key={item.identifier} /> );
+          })}
+        </ScrollView>
 
         {/* <FlatList
           keyExtractor={this.genKey}

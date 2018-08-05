@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacityComponent } from 'react-native';
 import { connect } from 'react-redux';
+import axios from 'axios';
+
 import Styles from '../../common/Styles';
 import s from './style';
 
@@ -27,11 +29,11 @@ export default class Login extends Component {
   }
 
   _onFbPress = () => {
-
+    axios.get(`https://www.facebook.com/v3.1/dialog/oauth?
+    client_id=`);
   }
 
   render() {
-    const { navigation: { state: { routeName } } } = this.props;
     return (
       <View style={[Styles.backgroundColorGray, Styles.centeredContainerColumn]}>
 
