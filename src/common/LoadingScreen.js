@@ -6,7 +6,7 @@ export default LoadingScreen = ({ onPress }) => (
   <View
     style={[Styles.backgroundColorGray, Styles.centeredFlexCol]}
     onTouchEnd={onPress}
-    >
+  >
     <Text>LoadingScreen page:
     </Text>
   </View>
