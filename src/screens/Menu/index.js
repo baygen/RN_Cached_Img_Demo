@@ -24,19 +24,19 @@ export default class Menu extends Component {
     return (
       <View style={[Styles.backgroundColorGray, Styles.centeredContainerColumn]}>
         <Text >Select filter to apply </Text>
-        <Text >{this.props.filter||' .'}</Text>
+        <Text >{this.props.filter || ' .'}</Text>
 
         <TypesFilter
+
+          tabsProps={{
+            tabsContainerStyle: {
+              flexDirection: 'column',
+              flex:1,
+              width: '100%'
+            }
+          }}
           onChange={this.onFilterChange}
         />
-        {/* <Picker
-          selectedValue={this.props.filter}
-          style={{ height: 50, width: 150}}
-          onValueChange={this.onFilterChange}>
-          <Picker.Item label="Photo" value="photoPost" />
-          <Picker.Item label="Messages" value="messagePost" />
-          <Picker.Item label="All" value="" />
-        </Picker> */}
       </View>
     );
   }
