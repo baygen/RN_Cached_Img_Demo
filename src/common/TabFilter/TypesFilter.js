@@ -11,13 +11,19 @@ import { setAndApplyFilter } from './logic';
 @connect(state => ({
   filter: state.filter
 }), {
-    setAndApplyFilter
-  })
+  setAndApplyFilter
+})
 export default class TypesFilter extends Component {
-  static props = {
+  static propTypes = {
     onChange: propTypes.func,
     containerStyle: propTypes.shape({}),
     tabsProps: propTypes.shape({})
+  }
+
+  static defaultProps = {
+    onChange: ()=>{},
+    containerStyle: {},
+    tabsProps: {}
   }
 
   state = {
@@ -28,7 +34,7 @@ export default class TypesFilter extends Component {
 
   componentWillReceiveProps(nProps) {
     const type = nProps.filter.value;
-    this._setSelectedIndex(filters.typeFilter.values.findIndex(e => e === type))
+    this._setSelectedIndex(filters.typeFilter.values.findIndex(e => e === type));
   }
 
   _onFilterChange = (index) => {
@@ -39,7 +45,7 @@ export default class TypesFilter extends Component {
   }
 
   _show = (l, filter) => {
-    ToastAndroid.show(`Filter : ${filter},,, ${l}`, 800)
+    ToastAndroid.show(`Filter : ${filter},,, ${l}`, 800);
   }
 
   _setSelectedIndex = selectedIndex => this.setState({ selectedIndex })
