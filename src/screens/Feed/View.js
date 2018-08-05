@@ -10,15 +10,15 @@ import { getPosts } from './logic';
   // posts: state.feed.displayedPosts,
   // store: state
 }),
-  {
-    getPosts
-  })
+{
+  getPosts
+})
 export default class Feed extends Component {
   constructor(props) {
     super(props);
     state = {
 
-    }
+    };
     // this.props.getPosts();
   }
 

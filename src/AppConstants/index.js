@@ -7,7 +7,7 @@ export const post = {
     imageURL: 'imageURL',
     commentsCount: 'commentsCount'
   }
-}
+};
 
 export const filters = {
   typeFilter: {
@@ -15,4 +15,4 @@ export const filters = {
     values: ['', 'photoPost', 'messagePost'],
     labels: ['All', 'Photo Posts', 'Message Posts']
   }
-}
+};
