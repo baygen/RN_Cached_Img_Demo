@@ -15,4 +15,4 @@ export const FEED = mirror({
 
 export const FILTER = mirror({
   SET_FILTER_VALUE: null
-})
+});
