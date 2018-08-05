@@ -44,7 +44,8 @@ export default StyleSheet.create({
   avatarIcon: {
     width: 80,
     height: 80,
-    borderRadius: 40
+    borderRadius: 40,
+    margin: 5
   },
   centeredContainerRow: {
     flex: 1,
@@ -57,6 +58,10 @@ export default StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  userNameContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
   },
   fullWidth: {
     flex: 1,

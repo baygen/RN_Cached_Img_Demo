@@ -3,9 +3,9 @@ import { View, Text, Image } from 'react-native';
 import moment from 'moment';
 import FastImage from 'react-native-fast-image';
 
-import Styles from '../../Styles';
-const SRC_AVATAR_DEFAULT = require('../../../../assets/avatar.png');
-const SRC_IMAGE_DEFAULT = require('../../../../assets/placeholderImage.png');
+import Styles from '../Styles';
+const SRC_AVATAR_DEFAULT = require('../../../assets/avatar.png');
+const SRC_IMAGE_DEFAULT = require('../../../assets/placeholderImage.png');
 
 export const AvatarIcon = ({ url, style = {} }) => (
   <FastImage
@@ -14,7 +14,7 @@ export const AvatarIcon = ({ url, style = {} }) => (
       priority: FastImage.priority.normal,
     }}
     defaultSource={SRC_AVATAR_DEFAULT}
-    style={[{ margin: 5 }, Styles.avatarIcon, style]} />
+    style={[ Styles.avatarIcon, style]} />
 );
 
 export const LargeImage = ({ url, style = {}, ...rest }) => {
@@ -28,6 +28,7 @@ export const LargeImage = ({ url, style = {}, ...rest }) => {
       {...rest}
       onLoadEnd={() => isLoaded = true}
       resizeMode={FastImage.resizeMode.cover}
+      fadeDuration={100}
       defaultSource={SRC_IMAGE_DEFAULT}
       style={[Styles.postImage, style, !isLoaded && { backgroundColor: 'red' }]} />)
 };
@@ -49,10 +50,7 @@ export const UserName = ({
     container : {}
   }
 }) => (
-    <View style={[{
-      flexDirection: 'row',// paddingHorizontal: 5,
-      justifyContent: 'flex-start',
-    }, styles.container || {}]} >
+    <View style={[Styles.userNameContainer, styles.container || {}]} >
       <Text style={[{ fontSize: 20, fontWeight: '500' }, styles.textStyle || {}]} >{name}</Text>
     </View>
   );
