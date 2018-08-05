@@ -58,6 +58,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  fullWidth: {
+    flex: 1,
+    width: '100%'
+  },
   fullHeightWidth: {
     height: '100%',
     width: '100%'
