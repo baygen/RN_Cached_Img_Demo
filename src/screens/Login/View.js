@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, TouchableOpacityComponent } from 'react-native';
 import { connect } from 'react-redux';
 import Styles from '../../common/Styles';
 import s from './style';
@@ -11,7 +11,7 @@ export default class Login extends Component {
 
   componentDidMount() {
     const { navigation: { state: { routeName } } } = this.props;
-    console.log('ProfilePage did mount for '+ routeName);
+    console.log('ProfilePage did mount for ' + routeName);
     // console.keys(this)
   }
 
@@ -26,10 +26,18 @@ export default class Login extends Component {
     // this.props.navigation.navigate('AppLoadingPage');
   }
 
+  _onFbPress = () => {
+
+  }
+
   render() {
     const { navigation: { state: { routeName } } } = this.props;
     return (
       <View style={[Styles.backgroundColorGray, Styles.centeredContainerColumn]}>
+
+        <TouchableOpacityComponent onPress={this._onFbPress} >
+          <Text> Login with Facebook</Text>
+        </TouchableOpacityComponent>
         <Text style={s.routeName} >
           {routeName}
         </Text>
