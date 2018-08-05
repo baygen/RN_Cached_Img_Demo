@@ -5,7 +5,7 @@ import FastImage from 'react-native-fast-image';
 
 import Styles from '../../Styles';
 const SRC_AVATAR_DEFAULT = require('../../../../assets/avatar.png');
-const SRC_IMAGE_DEFAULT = require('../../../../assets/earth.jpg');
+const SRC_IMAGE_DEFAULT = require('../../../../assets/placeholderImage.png');
 
 export const AvatarIcon = ({ url, style = {} }) => (
   <FastImage
