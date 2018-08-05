@@ -31,12 +31,10 @@ const MainNavigator = createStackNavigator(
 
 const AppNavigator = createDrawerNavigator(
   {
-    [ROUTES.APP_MAIN]: {
-      screen: MainNavigator
-    }
+    [ROUTES.APP_MAIN]: { screen: MainNavigator }
   },
   {
-    contentComponent: Menu,
+    contentComponent: Menu
   }
 );
 
