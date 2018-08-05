@@ -10,10 +10,18 @@ import Login from '../screens/Login/View';
 
 import Menu from '../screens/Menu';
 
+export const ROUTES = {
+  FEED: 'Feed',
+  APP: 'App',
+  AUTH: 'Auth',
+  APP_MAIN: 'Main',
+  APP_LOADING: 'AppLoading',
+  LOGIN: 'Login'
+}
 
 const MainNavigator = createStackNavigator(
   {
-    Feed: { screen: Feed }
+    [ROUTES.FEED]: { screen: Feed }
   },
   {
     headerMode: 'float',
@@ -23,19 +31,18 @@ const MainNavigator = createStackNavigator(
 
 const AppNavigator = createDrawerNavigator(
   {
-    MainNavigator: {
+    [ROUTES.APP_MAIN]: {
       screen: MainNavigator
     }
   },
   {
     contentComponent: Menu,
-
   }
 );
 
 const LoginNavigator = createStackNavigator(
   {
-    Login: { screen: Login }
+    [ROUTES.LOGIN]: { screen: Login }
   },
   {
     headerMode: 'none',
@@ -44,9 +51,9 @@ const LoginNavigator = createStackNavigator(
 
 export default createSwitchNavigator(
   {
-    AppLoading: LoadingScreen,
-    App: AppNavigator,
-    Authorise: LoginNavigator,
+    [ROUTES.APP_LOADING]: LoadingScreen,
+    [ROUTES.APP]: AppNavigator,
+    [ROUTES.AUTH]: LoginNavigator,
   },
   {
     initialRouteName: 'App'
