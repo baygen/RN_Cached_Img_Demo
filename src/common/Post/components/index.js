@@ -17,28 +17,30 @@ export const AvatarIcon = ({ url, style = {} }) => (
     style={[{ margin: 5 }, Styles.avatarIcon, style]} />
 );
 
-export const LargeImage = ({ url, style = {} }) => (
-  <FastImage
-    source={{
-      uri: url,
-      priority: FastImage.priority.normal,
-    }}
-    resizeMode={FastImage.resizeMode.cover}
-    defaultSource={SRC_IMAGE_DEFAULT}
-    style={[Styles.postImage, style]} />
-);
+export const LargeImage = ({ url, style = {}, ...rest }) => {
+  let isLoaded = false;
+  return (
+    <FastImage
+      source={{
+        uri: url,
+        priority: FastImage.priority.high,
+      }}
+      {...rest}
+      onLoadEnd={() => isLoaded = true}
+      resizeMode={FastImage.resizeMode.cover}
+      defaultSource={SRC_IMAGE_DEFAULT}
+      style={[Styles.postImage, style, !isLoaded && { backgroundColor: 'red' }]} />)
+};
 
 export const BottomPart = ({ commentsCount = 0, likesCount = null }) => (
-  <View style={{
-    width: '100%', alignItems: 'center',
-    justifyContent: likesCount ? 'space-between' : 'center',
-    height: 30
-  }} >
-    {likesCount && <Text>{likesCount} likes</Text>}
+  <View
+    style={[Styles.bottomRow,
+    { justifyContent: likesCount ? 'space-between' : 'center' }]} >
+    <Text style={{ display: !!likesCount ? 'flex' : 'none' }}>{likesCount} likes</Text>
     <Text > {commentsCount} comments</Text>
-    {likesCount && <Text>{moment().format('M D, HH:mm')}</Text>}
+    <Text style={{ display: !!likesCount ? 'flex' : 'none' }}>{moment().format('DD MMM HH:mm')}</Text>
   </View>
-);
+)
 
 export const UserName = ({
   name = 'Unkhown User',
